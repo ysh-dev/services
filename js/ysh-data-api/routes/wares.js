@@ -11,6 +11,15 @@ router.get('/brand/:br', function(req, res, next) {
 			res.send({status : err});
 		}
 	});
+}).get('/search/:title', function(req, res, next) {
+	var query = {title: new RegExp(req.params.title, 'i') };
+	db.collection('wares').find(query, function(err, docs) {
+		if(!err){
+			res.send(docs);
+		}else{
+			res.send({status : err});
+		}
+	});
 }).get('/:id', function(req, res, next) {
 	db.collection('wares').find({id:req.params.id}, function(err, docs) {
 		if(!err){
