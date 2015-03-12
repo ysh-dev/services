@@ -10,13 +10,13 @@ function setup(app){//app: an express instance "express()";
 	});
 	
 	var ads = require('./routes/ads');
-	var users = require('./routes/users');
+	var members = require('./routes/members');
 	var channels = require('./routes/channels');
 	var brands = require('./routes/brands');
 	var wares = require('./routes/wares');
 	
 	app.use('/ads', ads);
-	app.use('/users', users);
+	app.use('/members', members);
 	app.use('/channels', channels);
 	app.use('/brands', brands);
 	app.use('/wares', wares);
